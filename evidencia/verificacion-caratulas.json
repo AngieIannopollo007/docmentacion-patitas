@@ -1,0 +1,146 @@
+[
+  {
+    "archivo": "01-Formulacion-del-proyecto.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "02-Cronograma.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "03-Requerimientos-del-sistema.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "04-Analisis-del-sistema.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "05-Diseno-detallado-y-DER.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "06-Estudio-de-factibilidad.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "07-Manual-de-usuario.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "08-Manual-de-administracion.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "09-Manual-tecnico.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "10-Plan-y-resultados-de-pruebas.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "Anexo-Diccionario-de-datos.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  },
+  {
+    "archivo": "Anexo-Matriz-de-pruebas.pdf",
+    "alumnos": [
+      "Iannopollo Angeline",
+      "Galindez Sofia",
+      "Igarzabal Felipe",
+      "Seiberth Valentin",
+      "Dominguez Victoria"
+    ],
+    "titulo_sin_patitas": true,
+    "paginas_interiores_identicas": true
+  }
+]
