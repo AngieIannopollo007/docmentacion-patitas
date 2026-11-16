@@ -1,0 +1,80 @@
+# Manual técnico de PATITAS
+
+## Entorno y organización
+
+La versión revisada declara Node.js 24 o superior. No tiene dependencias externas en package.json y no requiere npm install para ejecutar la app. SQLite se utiliza a través de node:sqlite. El equipo de desarrollo debe conservar el archivo package-lock.json y ejecutar las pruebas después de cambiar el entorno.
+
+| Archivo | Responsabilidad |
+| --- | --- |
+| servidor.js | Carga configuración, crea la aplicación, abre puerto y programa el procesamiento de correo |
+| backend/app.js | HTTP, recursos públicos, rutas, sesión, CSRF, interpretación del cuerpo y respuesta de errores |
+| backend/servicios.js | Reglas de negocio, permisos de entidades y consultas de los recorridos |
+| backend/base.js | Esquema, migraciones, datos ficticios y funciones de consulta/transacción |
+| backend/seguridad.js | Validaciones, scrypt, tokens y comprobación básica de formatos de imagen |
+| backend/correo.js | Transporte SMTP Gmail y cola persistida |
+| public/index.html | Contenedores iniciales y carga de CSS/JavaScript |
+| public/app.js | Pantallas, formularios, eventos, fetch y actualización periódica |
+| public/estilos.css | Diseño y reglas para distintos tamaños de pantalla |
+| test/app.test.js | Pruebas de API, reglas, persistencia, correo simulado y regresiones |
+
+## Instalación y arranque
+
+Extraer la carpeta completa. Verificar node --version. Desde PATITAS ejecutar node servidor.js, o usar ABRIR PATITAS.cmd en Windows. El servidor escucha en 127.0.0.1 y utiliza el puerto de PORT o 3000 por defecto. El navegador debe abrir la dirección impresa por la terminal; no public/index.html por doble clic.
+
+La base datos/patitas.sqlite se crea si falta. Si está vacía y DEMO no es 0, se cargan cuentas y mascotas ficticias. Si ya hay un usuario, datosDemo no vuelve a crear el conjunto inicial. Desactivar demo después de haber iniciado no elimina los registros anteriores.
+
+## Configuración
+
+Copiar .env.example como .env, sin reemplazar uno existente. PORT establece el puerto. DEMO=0 impide la carga inicial de ejemplos. GMAIL_USER y GMAIL_APP_PASSWORD configuran el remitente y su contraseña de aplicación. No se deben publicar ni registrar sus valores en logs.
+
+Gmail requiere una opción compatible de autenticación en la cuenta. La guía del proyecto explica cómo completar una contraseña de aplicación cuando Google la ofrece; la configuración real y su aceptación deben comprobarse por la dueña de la cuenta. El arranque solo detecta la presencia de datos, no garantiza una autenticación exitosa.
+
+La implementación usa TLS directo con smtp.gmail.com:465 y valida el certificado. No permite desactivar esa comprobación desde el formulario.
+
+## Persistencia y migraciones
+
+conectar crea tablas y habilita claves foráneas, WAL y busy_timeout de 5000 ms. Después aplica migraciones aditivas dentro de una transacción: agrega foto y bienvenida a usuarios, foto_extra a mascotas, la tabla notificaciones y su vínculo opcional con mensajes. Se inspeccionan columnas antes de alterarlas.
+
+Al migrar se convierten correos existentes en avisos generales sin duplicarlos mediante un índice único. La bienvenida queda almacenada como cinco, no como un incremento por arranque. Las cuentas demo conocidas reciben su ilustración si antes no tenían imagen.
+
+Para un cambio futuro, no se debe editar una base de usuarios sin respaldo. Se recomienda introducir migraciones versionadas y probar al menos base nueva, base anterior y ejecución repetida de la misma actualización. Esa herramienta de versiones es una mejora pendiente.
+
+## Respaldo y restauración
+
+Para un respaldo simple local, detener todas las instancias que abran esa base y copiar completa la carpeta datos a un lugar protegido. Si existe una instancia en otra terminal o equipo, cerrar solo el navegador no alcanza. Con WAL activo, copiar únicamente el archivo principal mientras está abierto puede omitir datos recientes.
+
+Guardar .env por separado y con acceso restringido si también se necesita recuperar configuración; no incorporarlo al ZIP público. Conservar más de una copia y registrar fecha y versión de código asociada.
+
+Para restaurar, primero trabajar en una carpeta de prueba y con el servidor detenido. Conservar la base actual como respaldo adicional, recuperar la carpeta datos de la copia elegida, iniciar y comprobar acceso, conteos e historial. No se probó una restauración operativa de datos reales como parte de esta documentación; es un procedimiento a ensayar con datos ficticios.
+
+## Pruebas y diagnóstico
+
+Ejecutar node --test desde la carpeta del proyecto. Los tests usan bases en memoria o temporales y puertos locales elegidos automáticamente; no abren la base habitual ni envían correos reales. En PowerShell, npm.cmd test evita el bloqueo que puede afectar a npm.ps1. Se puede registrar salida con node --test --test-reporter=tap.
+
+Si una prueba de conexión falla por restricciones del entorno, no debe anotarse como aprobación: se revisa el permiso para localhost y se vuelve a ejecutar. La evidencia de esta entrega corresponde a una ejecución real de 30 casos aprobados.
+
+Un puerto ocupado requiere cerrar la instancia anterior o elegir otro PORT y reiniciar. Si la página usa frontend nuevo contra servidor antiguo, puede encontrar rutas inexistentes: reemplazar archivos no actualiza los módulos que un proceso ya cargó. Reiniciar el servidor es obligatorio después de actualizar backend.
+
+## Seguridad existente y límites
+
+Las claves usan scrypt con sal. El token aleatorio se entrega como cookie HttpOnly/SameSite Strict y en la base se conserva su SHA-256; el token CSRF es distinto. Las API comprueban sesión vigente y el token de las operaciones de cambio. Se valida el origen cuando llega la cabecera Origin.
+
+Las consultas enlazan parámetros. La salida visible escapa textos antes de insertarlos en HTML. Los archivos estáticos se limitan a public y tipos previstos; no se exponen .env o datos/. La imagen se valida por MIME, Base64, tamaño y firmas básicas: no es análisis completo del archivo ni reconocimiento de identidad.
+
+Esta implementación no es una auditoría de seguridad. Antes de Internet faltan HTTPS y cookies Secure, verificación de buzones, recuperación de cuentas, controles de abuso más amplios, administración real de identidades y revisión de privacidad. Los límites de acceso por IP están en memoria y se reinician con el proceso.
+
+## Gestión de correo
+
+notificar guarda correo y aviso del usuario. El ciclo cada cinco segundos toma hasta cinco pendientes y usa una marca en memoria para evitar procesamientos simultáneos dentro del mismo proceso. No es una cola distribuida y no está preparada para varios servidores procesando juntos la misma base.
+
+Los estados local y error requieren reintento explícito cuando corresponda. Al iniciar, un envío que quedó enviando se marca error porque su resultado es incierto. Revisar la bandeja antes de reintentar: la aceptación por Gmail pudo ocurrir antes de que se guardara la confirmación. No se garantiza entrega exactamente una vez.
+
+## Repositorio y traspaso
+
+Subir código, package.json, package-lock.json, .env.example, documentación, esquema y pruebas. Excluir .env, datos/, node_modules y respaldos privados. Mantener un solo repositorio: no clonar otro dentro de PATITAS para evitar errores con carpetas .git anidadas.
+
+Para cada entrega se recomienda registrar hash o commit, cambios, migraciones, pruebas y límites. La siguiente camada debe poder iniciar con una base demo nueva sin recibir domicilios ni conversaciones reales. El inventario adjunto fija los archivos inspeccionados para esta documentación.
+
+## Evolución propuesta
+
+Separar rutas y servicios por módulo cuando su tamaño dificulte el mantenimiento; incorporar migraciones versionadas y una prueba de restauración; paginar paneles completos; trasladar imágenes a almacenamiento de archivos con permisos; preparar despliegue y evaluación de carga. Estas son propuestas, no características ya implementadas.

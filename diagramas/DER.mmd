@@ -1,0 +1,145 @@
+erDiagram
+  ADOPCIONES {
+    INTEGER id PK
+    INTEGER solicitud_id FK
+    INTEGER mascota_id FK
+    INTEGER adoptante_id FK
+    INTEGER responsable_id FK
+    TEXT seguimiento
+    TEXT fecha
+  }
+  CORREOS {
+    INTEGER id PK
+    INTEGER usuario_id FK
+    TEXT destinatario
+    TEXT asunto
+    TEXT cuerpo
+    TEXT estado
+    INTEGER intentos
+    TEXT error
+    TEXT creado
+  }
+  DONACIONES {
+    INTEGER id PK
+    INTEGER donante_id FK
+    INTEGER destinatario_id FK
+    TEXT tipo
+    TEXT descripcion
+    INTEGER centavos
+    TEXT estado
+    INTEGER puntos
+    TEXT creado
+  }
+  MASCOTAS {
+    INTEGER id PK
+    INTEGER responsable_id FK
+    TEXT nombre
+    TEXT especie
+    TEXT raza
+    INTEGER edad_meses
+    TEXT sexo
+    TEXT tamano
+    TEXT descripcion
+    TEXT salud
+    TEXT foto
+    TEXT estado
+    TEXT creado
+    TEXT foto_extra
+  }
+  MENSAJES {
+    INTEGER id PK
+    INTEGER emisor_id FK
+    INTEGER receptor_id FK
+    TEXT cuerpo
+    TEXT creado
+  }
+  NOTIFICACIONES {
+    INTEGER id PK
+    INTEGER usuario_id FK
+    TEXT asunto
+    TEXT cuerpo
+    TEXT tipo
+    INTEGER referencia
+    INTEGER leida
+    INTEGER correo_id FK
+    TEXT creado
+    INTEGER mensaje_id FK
+  }
+  REPORTES {
+    INTEGER id PK
+    INTEGER resena_id FK
+    INTEGER autor_id FK
+    TEXT motivo
+    TEXT estado
+  }
+  RESENAS {
+    INTEGER id PK
+    INTEGER autor_id FK
+    INTEGER destinatario_id FK
+    INTEGER adopcion_id FK
+    INTEGER donacion_id FK
+    INTEGER puntuacion
+    TEXT comentario
+    INTEGER oculta
+    TEXT creado
+  }
+  SESIONES {
+    TEXT token PK
+    INTEGER usuario_id FK
+    TEXT csrf
+    INTEGER vence
+  }
+  SOLICITUDES {
+    INTEGER id PK
+    INTEGER mascota_id FK
+    INTEGER adoptante_id FK
+    TEXT nombre
+    INTEGER edad
+    TEXT email
+    TEXT telefono
+    TEXT direccion
+    TEXT vivienda
+    TEXT motivo
+    INTEGER compromiso
+    TEXT estado
+    TEXT observaciones
+    TEXT creado
+  }
+  USUARIOS {
+    INTEGER id PK
+    TEXT nombre
+    TEXT email
+    TEXT clave
+    TEXT tipo
+    TEXT ciudad
+    TEXT descripcion
+    TEXT telefono
+    TEXT direccion
+    TEXT alias_donacion
+    TEXT contacto_publico
+    TEXT creado
+    TEXT foto
+    INTEGER bienvenida
+  }
+  USUARIOS ||--o{ ADOPCIONES : "responsable_id"
+  USUARIOS ||--o{ ADOPCIONES : "adoptante_id"
+  MASCOTAS ||--o| ADOPCIONES : "mascota_id"
+  SOLICITUDES ||--o| ADOPCIONES : "solicitud_id"
+  USUARIOS ||--o{ CORREOS : "usuario_id"
+  USUARIOS ||--o{ DONACIONES : "destinatario_id"
+  USUARIOS ||--o{ DONACIONES : "donante_id"
+  USUARIOS ||--o{ MASCOTAS : "responsable_id"
+  USUARIOS ||--o{ MENSAJES : "receptor_id"
+  USUARIOS ||--o{ MENSAJES : "emisor_id"
+  MENSAJES o|--o{ NOTIFICACIONES : "mensaje_id"
+  CORREOS o|--o| NOTIFICACIONES : "correo_id"
+  USUARIOS ||--o{ NOTIFICACIONES : "usuario_id"
+  USUARIOS ||--o{ REPORTES : "autor_id"
+  RESENAS ||--o{ REPORTES : "resena_id"
+  DONACIONES o|--o{ RESENAS : "donacion_id"
+  ADOPCIONES o|--o{ RESENAS : "adopcion_id"
+  USUARIOS ||--o{ RESENAS : "destinatario_id"
+  USUARIOS ||--o{ RESENAS : "autor_id"
+  USUARIOS ||--o{ SESIONES : "usuario_id"
+  USUARIOS ||--o{ SOLICITUDES : "adoptante_id"
+  MASCOTAS ||--o{ SOLICITUDES : "mascota_id"

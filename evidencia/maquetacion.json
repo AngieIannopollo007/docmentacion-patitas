@@ -1,0 +1,74 @@
+[
+  {
+    "archivo": "01-Formulacion-del-proyecto.md",
+    "titulo": "Formulación del proyecto PATITAS",
+    "sha256_texto": "dc169db85d16e7b26027442cc0dffbe5235eb5cae6167a85b21d2395ea9e878f",
+    "paginas_pdf": 4
+  },
+  {
+    "archivo": "02-Cronograma.md",
+    "titulo": "Cronograma del proyecto PATITAS",
+    "sha256_texto": "12b4fef6d1f3682ac1e0629592548aca229a0933cc37b4808cd23b0f7afdc8c2",
+    "paginas_pdf": 4
+  },
+  {
+    "archivo": "03-Requerimientos-del-sistema.md",
+    "titulo": "Requerimientos del sistema PATITAS",
+    "sha256_texto": "53089421097ceae82deb224e69e1e93fbdee5a9abd29f0e808e556ebcb6f04b7",
+    "paginas_pdf": 6
+  },
+  {
+    "archivo": "04-Analisis-del-sistema.md",
+    "titulo": "Análisis del sistema PATITAS",
+    "sha256_texto": "efd3bf7aa7f3e9bb26762eaf7aab6ee20b6f1565eebd47c7072481206c1be659",
+    "paginas_pdf": 4
+  },
+  {
+    "archivo": "05-Diseno-detallado-y-DER.md",
+    "titulo": "Diseño detallado y DER de PATITAS",
+    "sha256_texto": "86d0193bdfa6324c7356652c09a18979e28d1133664db343d192f23f8f02b6da",
+    "paginas_pdf": 8
+  },
+  {
+    "archivo": "06-Estudio-de-factibilidad.md",
+    "titulo": "Estudio de factibilidad de PATITAS",
+    "sha256_texto": "887d365e4cd1e7896c72e660ad8a1def6313f5e66b018809b0edcdb63bc58a72",
+    "paginas_pdf": 4
+  },
+  {
+    "archivo": "07-Manual-de-usuario.md",
+    "titulo": "Manual de usuario de PATITAS",
+    "sha256_texto": "86177f79eb57023a5f04d43e8d36d8423fdf6dc2589c2347953ec6c120c0a850",
+    "paginas_pdf": 6
+  },
+  {
+    "archivo": "08-Manual-de-administracion.md",
+    "titulo": "Manual de administración de PATITAS",
+    "sha256_texto": "dd669fee75b0142e05ee463b101371baee0e237a334ebd90f55f041a3061f6a0",
+    "paginas_pdf": 4
+  },
+  {
+    "archivo": "09-Manual-tecnico.md",
+    "titulo": "Manual técnico de PATITAS",
+    "sha256_texto": "3618f9713c78fc076d473421ed1a69ec391c969eb2829095ee9ed2ecbe9a0464",
+    "paginas_pdf": 5
+  },
+  {
+    "archivo": "10-Plan-y-resultados-de-pruebas.md",
+    "titulo": "Plan y resultados de pruebas de PATITAS",
+    "sha256_texto": "b0b98b12891d21d532a37f1b8d13cfde800d15a421b1f66b81ab14512ace8779",
+    "paginas_pdf": 5
+  },
+  {
+    "archivo": "Anexo-Diccionario-de-datos.md",
+    "titulo": "Diccionario de datos de PATITAS",
+    "sha256_texto": "b778aa52de3923f3b54773d0e70d3970a3f92cc1a41805053385d4f93ba5d362",
+    "paginas_pdf": 8
+  },
+  {
+    "archivo": "Anexo-Matriz-de-pruebas.md",
+    "titulo": "Matriz de pruebas y trazabilidad de PATITAS",
+    "sha256_texto": "d2ae550b00ea205c0e209547714c6c44b0f0e7227d9eda0d925419c02111334a",
+    "paginas_pdf": 4
+  }
+]

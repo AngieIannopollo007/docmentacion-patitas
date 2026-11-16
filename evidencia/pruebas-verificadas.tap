@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: primero login: ningún dato de la comunidad sin sesión
+ok 1 - primero login: ningún dato de la comunidad sin sesión
+  ---
+  duration_ms: 147.6918
+  type: 'test'
+  ...
+# Subtest: registro, sesión persistida y cierre efectivo
+ok 2 - registro, sesión persistida y cierre efectivo
+  ---
+  duration_ms: 123.2649
+  type: 'test'
+  ...
+# Subtest: login incorrecto, correo duplicado y rol admin no registrable
+ok 3 - login incorrecto, correo duplicado y rol admin no registrable
+  ---
+  duration_ms: 119.8624
+  type: 'test'
+  ...
+# Subtest: CSRF: rechaza token falso y origen ajeno
+ok 4 - CSRF: rechaza token falso y origen ajeno
+  ---
+  duration_ms: 109.7162
+  type: 'test'
+  ...
+# Subtest: publicación, edición y retiro: solo su responsable
+ok 5 - publicación, edición y retiro: solo su responsable
+  ---
+  duration_ms: 229.5896
+  type: 'test'
+  ...
+# Subtest: formularios inválidos, límite de edad y mascota inexistente
+ok 6 - formularios inválidos, límite de edad y mascota inexistente
+  ---
+  duration_ms: 157.9164
+  type: 'test'
+  ...
+# Subtest: privacidad: solicitudes y datos de contacto no pasan a otro refugio
+ok 7 - privacidad: solicitudes y datos de contacto no pasan a otro refugio
+  ---
+  duration_ms: 230.0477
+  type: 'test'
+  ...
+# Subtest: aprobación: genera planilla, rechaza otras solicitudes y evita doble adopción
+ok 8 - aprobación: genera planilla, rechaza otras solicitudes y evita doble adopción
+  ---
+  duration_ms: 260.3375
+  type: 'test'
+  ...
+# Subtest: cancelación: solo el solicitante, antes de resolver
+ok 9 - cancelación: solo el solicitante, antes de resolver
+  ---
+  duration_ms: 187.0828
+  type: 'test'
+  ...
+# Subtest: donación: puntos solo al confirmar, una sola vez, sin auto-donación
+ok 10 - donación: puntos solo al confirmar, una sola vez, sin auto-donación
+  ---
+  duration_ms: 218.7953
+  type: 'test'
+  ...
+# Subtest: reseñas requieren experiencia, no se duplican y pueden moderarse
+ok 11 - reseñas requieren experiencia, no se duplican y pueden moderarse
+  ---
+  duration_ms: 284.8075
+  type: 'test'
+  ...
+# Subtest: mensajes privados: contacto con refugio y respuesta, sin filtración
+ok 12 - mensajes privados: contacto con refugio y respuesta, sin filtración
+  ---
+  duration_ms: 207.1757
+  type: 'test'
+  ...
+# Subtest: correo sin configurar: queda local y privado, nunca dice enviado
+ok 13 - correo sin configurar: queda local y privado, nunca dice enviado
+  ---
+  duration_ms: 153.9507
+  type: 'test'
+  ...
+# Subtest: cola Gmail: éxito, error recuperable y sin reenvío al procesar de nuevo
+ok 14 - cola Gmail: éxito, error recuperable y sin reenvío al procesar de nuevo
+  ---
+  duration_ms: 164.3944
+  type: 'test'
+  ...
+# Subtest: SMTP: diálogo TLS simulado, MIME base64 y aceptación final
+ok 15 - SMTP: diálogo TLS simulado, MIME base64 y aceptación final
+  ---
+  duration_ms: 2.8196
+  type: 'test'
+  ...
+# Subtest: persistencia real después de cerrar y reabrir el archivo SQLite
+ok 16 - persistencia real después de cerrar y reabrir el archivo SQLite
+  ---
+  duration_ms: 70.899
+  type: 'test'
+  ...
+# Subtest: archivos privados no disponibles, CSP presente y login estático accesible
+ok 17 - archivos privados no disponibles, CSP presente y login estático accesible
+  ---
+  duration_ms: 77.5503
+  type: 'test'
+  ...
+# Subtest: perfil editable: ignora escalada de rol y conserva contacto privado
+ok 18 - perfil editable: ignora escalada de rol y conserva contacto privado
+  ---
+  duration_ms: 163.4771
+  type: 'test'
+  ...
+# Subtest: fotos: acepta imagen data limitada y rechaza SVG subido o URL ejecutable
+ok 19 - fotos: acepta imagen data limitada y rechaza SVG subido o URL ejecutable
+  ---
+  duration_ms: 131.4903
+  type: 'test'
+  ...
+# Subtest: calificación tras adopción en ambos sentidos, sin duplicar
+ok 20 - calificación tras adopción en ambos sentidos, sin duplicar
+  ---
+  duration_ms: 207.7155
+  type: 'test'
+  ...
+# Subtest: HTTP: errores de JSON y de tipo, sin cambios en datos
+ok 21 - HTTP: errores de JSON y de tipo, sin cambios en datos
+  ---
+  duration_ms: 60.7995
+  type: 'test'
+  ...
+# Subtest: sesiones vencidas no habilitan acceso aunque exista la cookie
+ok 22 - sesiones vencidas no habilitan acceso aunque exista la cookie
+  ---
+  duration_ms: 99.5342
+  type: 'test'
+  ...
+# Subtest: registro con foto obligatoria y 5 PATITAS de bienvenida una sola vez
+ok 23 - registro con foto obligatoria y 5 PATITAS de bienvenida una sola vez
+  ---
+  duration_ms: 187.8869
+  type: 'test'
+  ...
+# Subtest: mascota: una foto obligatoria y segunda opcional, conservadas al editar
+ok 24 - mascota: una foto obligatoria y segunda opcional, conservadas al editar
+  ---
+  duration_ms: 121.3243
+  type: 'test'
+  ...
+# Subtest: chat individual: cada sala solo contiene mensajes entre sus dos participantes
+ok 25 - chat individual: cada sala solo contiene mensajes entre sus dos participantes
+  ---
+  duration_ms: 279.8289
+  type: 'test'
+  ...
+# Subtest: notificaciones privadas: contador, lectura persistente y sin marcar mensajes aún no mostrados
+ok 26 - notificaciones privadas: contador, lectura persistente y sin marcar mensajes aún no mostrados
+  ---
+  duration_ms: 277.6033
+  type: 'test'
+  ...
+# Subtest: historial del chat paginado: permite recuperar mensajes anteriores sin mezclarlos
+ok 27 - historial del chat paginado: permite recuperar mensajes anteriores sin mezclarlos
+  ---
+  duration_ms: 118.7126
+  type: 'test'
+  ...
+# Subtest: avisos y emails importantes: donación, confirmación y mensaje llegan a su destinatario
+ok 28 - avisos y emails importantes: donación, confirmación y mensaje llegan a su destinatario
+  ---
+  duration_ms: 182.8571
+  type: 'test'
+  ...
+# Subtest: actualización de una base anterior: conserva datos y no duplica bienvenida ni avisos
+ok 29 - actualización de una base anterior: conserva datos y no duplica bienvenida ni avisos
+  ---
+  duration_ms: 74.8233
+  type: 'test'
+  ...
+# Subtest: chat con administración: refugio responde al admin desde la sala y el aviso
+ok 30 - chat con administración: refugio responde al admin desde la sala y el aviso
+  ---
+  duration_ms: 248.2663
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5162.8643

@@ -1,0 +1,72 @@
+{
+  "fechaRevision": "2026-11-15",
+  "origen": "Copia local de PATITAS indicada por la autora; no se incluyen datos privados.",
+  "archivos": [
+    {
+      "archivo": "package.json",
+      "bytes": 228,
+      "lineas": 9,
+      "sha256": "0884d7259636d1e24bb71fe075a7dd1253957319187980aeaf1005ca636db400"
+    },
+    {
+      "archivo": "servidor.js",
+      "bytes": 1713,
+      "lineas": 25,
+      "sha256": "ff14cff3bda049e30dc0fa1eb13a8e03fac9d1a9d47de8d1ec103d1c66de8937"
+    },
+    {
+      "archivo": "backend/app.js",
+      "bytes": 9048,
+      "lineas": 122,
+      "sha256": "c1f2ffc79d957bd16d058eff373ecc921631fac2262153262f8ec0dc8f6e9172"
+    },
+    {
+      "archivo": "backend/base.js",
+      "bytes": 10339,
+      "lineas": 153,
+      "sha256": "648176a65f380bff8b2b983463894d4e463b70a85b098cf2d3d1e37489d76ac0"
+    },
+    {
+      "archivo": "backend/servicios.js",
+      "bytes": 24681,
+      "lineas": 319,
+      "sha256": "644947c7339689cf39fb6b3fffdb47149bbe2a7519a18458d6ba12f6634d21f9"
+    },
+    {
+      "archivo": "backend/seguridad.js",
+      "bytes": 3234,
+      "lineas": 60,
+      "sha256": "0332252b6bc4606c04d6dae83f1ebc591f957ea02767c49771138853eaeddb5f"
+    },
+    {
+      "archivo": "backend/correo.js",
+      "bytes": 3829,
+      "lineas": 69,
+      "sha256": "a464e761f9affe822c251d9d4e19d1aaefc3e6e2e61b751328fe160e8ce39253"
+    },
+    {
+      "archivo": "public/index.html",
+      "bytes": 944,
+      "lineas": 21,
+      "sha256": "aab92e79368dd69bc7b32ec4f21b0bd7636deacbbebe8e17f3513b01a538da70"
+    },
+    {
+      "archivo": "public/app.js",
+      "bytes": 46239,
+      "lineas": 337,
+      "sha256": "b0f5422845cf465e31b5640c6f053fc623711ce5e20fa650bffe61a8c965ef24"
+    },
+    {
+      "archivo": "public/estilos.css",
+      "bytes": 15260,
+      "lineas": 9,
+      "sha256": "cade226fc0a7cfe1a0995fff7dae7b441ad75eb534e0de7341bdfd7ff0cc315c"
+    },
+    {
+      "archivo": "test/app.test.js",
+      "bytes": 26192,
+      "lineas": 301,
+      "sha256": "77463803f8c9bfc4a21b57783193d922c05d3c5f1447f7eea21eb32ee18ce95f"
+    }
+  ]
+}
