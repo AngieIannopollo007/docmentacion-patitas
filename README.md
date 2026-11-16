@@ -2,7 +2,7 @@
 
 Este repositorio contiene exclusivamente la documentación. El código de la aplicación se conserva en [PATITAS-CONTENTAS](https://github.com/AngieIannopollo007/PATITAS-CONTENTAS).
 
-Abrí **index.html** en el navegador para elegir un documento.
+Visitá la [página de documentación](https://angieiannopollo007.github.io/docmentacion-patitas/) para elegir un documento. También podés abrir **index.html** localmente.
 
 - **editables/**: diez documentos principales y dos anexos en HTML y Markdown.
 - **pdf/**: doce documentos con carátula y escudo original a color.
